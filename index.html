@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel & Beatriz | Casamento</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Cores de Fundo Alternadas */
+            --bg-offwhite: #FCFAF8; 
+            --bg-cream: #FAF4EA;
+            
+            /* Paleta */
+            --color-gold: #C4A47C;
+            --color-text: #4A4A4A;
+            --color-text-heading: #2F2F2F;
+            
+            /* Tipografia */
+            --font-cursive: 'Great Vibes', cursive;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            
+            --transition: all 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--bg-offwhite);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; text-align: center; }
+
+        section { padding: 100px 0; }
+        .bg-cream { background-color: var(--bg-cream); }
+
+        /* --- Header (Sticky para não cobrir a imagem) --- */
+        header {
+            position: relative; /* <-- AQUI ESTÁ A CORREÇÃO */
+            width: 100%; 
+            z-index: 1000;
+            background: #FCFAF8; /* Fundo sólido off-white */
+            padding: 20px 0; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav ul { display: flex; justify-content: center; list-style: none; gap: 25px; }
+        nav a { 
+            text-decoration: none; color: var(--color-text); font-size: 0.75rem; 
+            text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
+            font-weight: 500;
+        }
+        nav a:hover { color: var(--color-gold); }
+
+        /* --- Home / Hero --- */
+        #home { padding-top: 0; }
+        .hero-image {
+    width: 100%;
+    height: auto; /* Deixa a altura se ajustar sozinha, sem cortar nada */
+    display: block;
+}
+        .invitation-text { padding: 80px 20px; background-color: var(--bg-offwhite); }
+        .verse { 
+            font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; 
+            max-width: 600px; margin: 0 auto 40px; color: var(--color-text-heading);
+        }
+        .parents { 
+            font-family: var(--font-serif); font-size: 1rem; letter-spacing: 1px; 
+            margin-bottom: 30px; line-height: 1.8;
+        }
+        .couple-names { 
+            font-family: var(--font-cursive); font-size: 4.5rem; color: var(--color-gold);
+            margin: 20px 0; font-weight: 400;
+        }
+        .convite-frase {
+            font-family: var(--font-serif); font-size: 1.3rem; text-transform: uppercase;
+            letter-spacing: 3px; margin-bottom: 50px;
+        }
+        .date-block {
+            display: flex; justify-content: center; align-items: center;
+            gap: 30px; font-family: var(--font-serif); border-top: 1px solid var(--color-gold);
+            border-bottom: 1px solid var(--color-gold); padding: 20px 0; max-width: 500px; margin: 0 auto;
+        }
+        .date-item { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
+        .date-main { font-size: 3rem; color: var(--color-gold); font-weight: 300; }
+
+        /* --- Títulos de Seção --- */
+        .subtitle { 
+            font-family: var(--font-sans); font-size: 0.7rem; text-transform: uppercase; 
+            letter-spacing: 4px; color: var(--color-text-secondary); margin-bottom: 5px; display: block;
+        }
+        .title-section { 
+            font-family: var(--font-cursive); /* Fonte Cursiva */
+            font-size: clamp(3.5rem, 6vw, 4.5rem); /* Tamanho maior para cursiva */
+            font-weight: 400;
+            color: var(--color-gold); /* Cor Dourada */
+            margin-bottom: 50px;
+            line-height: 1;
+        }
+
+        /* --- Botões Gerais --- */
+        .btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        .btn {
+            background-color: var(--color-gold); color: white; border: 1px solid var(--color-gold); 
+            padding: 15px 30px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;
+            cursor: pointer; transition: var(--transition); text-decoration: none; display: inline-block;
+        }
+        .btn:hover { background-color: var(--color-text-heading); border-color: var(--color-text-heading); color: #fff;}
+        
+        .btn-outline {
+            background-color: transparent; color: var(--color-gold);
+        }
+        .btn-outline:hover {
+            background-color: var(--color-gold); color: white;
+        }
+
+        /* --- Vídeo --- */
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            max-width: 800px; margin: 0 auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* --- Local (3 Fotos) --- */
+        .local-info { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 40px; }
+        
+        .local-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        .local-gallery img {
+            width: 100%; height: 250px; object-fit: cover; border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* --- Manual (Fundo Branco Destacado) --- */
+        .manual-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            width: 100%;
+            max-width: 1100px;
+        }
+        .manual-item {
+            background-color: #FFFFFF; 
+            padding: 30px 20px; /* Mais compacto para caber os 12 cards */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04); 
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .manual-item:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .manual-item i { font-size: 1.6rem; color: var(--color-gold); margin-bottom: 15px; }
+        .manual-item h4 { 
+            font-family: var(--font-serif); 
+            font-size: 1.3rem; 
+            margin-bottom: 8px; 
+            color: var(--color-text-heading); 
+        }
+        .manual-item p { font-size: 0.85rem; line-height: 1.5; color: var(--color-text-secondary); }
+
+        /* --- Lista & PIX --- */
+        .pix-box {
+            background: #FFFFFF; padding: 40px; border-radius: 12px; margin-top: 50px;
+            border: 1px solid rgba(196, 164, 124, 0.3); display: inline-block; text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+        }
+        .pix-title { font-family: var(--font-serif); color: var(--color-gold); font-size: 1.4rem; margin-bottom: 15px; }
+
+        /* --- Formulário --- */
+        form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        input, textarea {
+            padding: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-sans);
+            background-color: #FFFFFF;
+        }
+
+        /* --- Mobile --- */
+        @media (max-width: 768px) {
+            nav ul { gap: 12px; flex-wrap: wrap; }
+            nav a { font-size: 0.65rem; }
+            .couple-names { font-size: 3rem; }
+            .date-block { gap: 15px; }
+            .title-section { font-size: 3rem; }
+            .local-gallery { grid-template-columns: 1fr; } /* No mobile as fotos ficam uma embaixo da outra */
+            .local-gallery img { height: 200px; }
+            .btn-group { flex-direction: column; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#savethedate">Vídeo</a></li>
+                <li><a href="#local">Local</a></li>
+                <li><a href="#manual">Manual</a></li>
+                <li><a href="#rsvp">Confirmar</a></li>
+                <li><a href="#presentes">Presentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <picture>
+    <source media="(max-width: 768px)" srcset="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975376/Sem_nome_800_x_1200_px_xomxmp.png">
+    <img class="hero-image" src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975178/Design_sem_nome_3_lg7hyw.png" alt="Gabriel e Beatriz">
+</picture>
+            <div class="invitation-text">
+                <div class="container">
+                    <p class="verse">
+                        “Para que todos vejam, saibam, considerem e juntamente entendam que a mão do Senhor fez isto.”<br>
+                        <strong>Isaías 41:20</strong>
+                    </p>
+                    
+                    <div class="parents">
+                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Com a bênção de Deus e de seus pais</span>
+                        <div style="margin-bottom: 10px;">
+                            Regina Brilhante Pires & Daniel Bitencourt<br>
+                            Marcia Regina F. Politano & Vanderlei Roberto Politano
+                        </div>
+                        
+                    </div>
+
+                    <h1 class="couple-names">Gabriel & Beatriz</h1>
+                    <p class="convite-frase">Convidam para celebrar seu casamento</p>
+
+                    <div class="date-block">
+                        <div class="date-item">Sábado</div>
+                        <div class="date-main">03</div>
+                        <div class="date-item">Outubro</div>
+                        <div style="color: var(--color-gold); font-size: 1.5rem;">|</div>
+                        <div class="date-item">17:00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="savethedate" class="bg-cream">
+            <div class="container">
+                <span class="subtitle">Nossa História</span>
+                <h2 class="title-section">Save the Date</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="local">
+            <div class="container">
+                <span class="subtitle">Onde tudo acontece</span>
+                <h2 class="title-section">O Local</h2>
+                
+                <div class="local-gallery">
+                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 1">
+                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 2">
+                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 3">
+                </div>
+
+                <div class="local-info">
+                    <h3 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-text-heading);">Simony Palace</h3>
+                    <p>Chácara Jardins, Itápolis - SP, 14900-000</p>
+                    
+                    <div class="btn-group">
+                        <a href="https://maps.app.goo.gl/HUN9BLNDrhe6VVhx6" target="_blank" class="btn">
+                            <i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul/h6ujm339wy" target="_blank" class="btn btn-outline">
+                            <i class="fa-brands fa-waze" style="margin-right: 8px;"></i> Waze
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="manual" class="bg-cream">
+            <div class="container">
+                <span class="subtitle">Dicas Importantes</span>
+                <h2 class="title-section">Manual do Convidado</h2>
+                <div class="manual-grid">
+                    
+                    <div class="manual-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h4>Confirme sua presença</h4>
+                        <p>Sua confirmação prévia é essencial para a nossa organização.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <h4>Celular no silencioso</h4>
+                        <p>Por favor, não se esqueça de silenciar o aparelho durante a cerimônia.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <h4>Convidado não convida</h4>
+                        <p>Nosso evento é íntimo e restrito apenas aos nomes que constam no convite.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <h4>Mesa de doces</h4>
+                        <p>Aguarde a liberação oficial após o jantar para desfrutar das sobremesas.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <h4>Seja pontual</h4>
+                        <p>Não se atrase! A cerimônia iniciará pontualmente no horário marcado.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-seedling"></i>
+                        <h4>Decoração</h4>
+                        <p>Tudo foi feito com carinho para embelezar o espaço. Não leve a decoração para casa.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-dove"></i>
+                        <h4>Participe da cerimônia</h4>
+                        <p>Viva esse momento conosco prestando atenção e enviando boas energias.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-face-smile"></i>
+                        <h4>Boas energias</h4>
+                        <p>Não faça comentários negativos. Traga apenas amor, sorrisos e alegria!</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-xmark"></i>
+                        <h4>Branco é da noiva</h4>
+                        <p>Pedimos a gentileza de evitar roupas nas cores branca e off-white.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                        <h4>Aproveite bastante</h4>
+                        <p>Preparamos tudo com muito amor para que você celebre e dance muito!</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-camera"></i>
+                        <h4>Fotos profissionais</h4>
+                        <p>Não atrapalhe os fotógrafos. Deixe os registros por conta da nossa equipe.</p>
+                    </div>
+
+                    <div class="manual-item">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <h4>Despedida</h4>
+                        <p>Não saia sem se despedir! Queremos dar um abraço em cada um de vocês.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp">
+            <div class="container">
+                <span class="subtitle">Confirmação</span>
+                <h2 class="title-section">Você irá?</h2>
+                <p style="margin-bottom: 30px;">Por favor, confirme sua presença o quanto antes para organizarmos tudo com carinho.</p>
+                <a href="https://wa.me/5516997243704?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento!" target="_blank" class="btn">
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 1.1rem;"></i> Confirmar Presença
+                </a>
+            </div>
+        </section>
+
+        <section id="presentes" class="bg-cream">
+            <div class="container">
+                <span class="subtitle">Carinho</span>
+                <h2 class="title-section">Lista de Presentes</h2>
+                <p>Sua presença é o nosso maior presente! Mas, caso deseje nos abençoar, você pode acessar nossa lista virtual.</p>
+                
+                <a href="https://www.finalfeliz.de/gabrielbitencourt-beatriz" target="_blank" class="btn" style="margin-top: 30px;">
+                    <i class="fa-solid fa-gift" style="margin-right: 8px;"></i> Acessar Lista Virtual
+                </a>
+
+                <br>
+
+                <div class="pix-box">
+                    <div class="pix-title"><i class="fa-solid fa-money-bill-transfer"></i> Presente em Dinheiro</div>
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Se preferir contribuir com qualquer valor para a montagem do nosso novo lar ou lua de mel:</p>
+                    <p style="font-size: 1.2rem; font-weight: 500; color: var(--color-gold); background: #FAF4EA; padding: 10px; border-radius: 6px;">
+                        Chave PIX: (16) 99724-3704
+                    </p>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Gabriel Bitencourt</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="agradecimentos">
+            <div class="container">
+                <span class="subtitle">Mensagem</span>
+                <h2 class="title-section">Deixe um Recado</h2>
+                <p style="margin-bottom: 40px; font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-heading);">
+                    Gostaríamos muito de ler uma mensagem sua neste momento tão especial.
+                </p>
+
+                <form action="https://formsubmit.co/gabrielpiresbita@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://gabrielbeatriz.com.br/#agradecimentos">
+                    
+                    <input type="text" name="Nome" placeholder="Seu Nome" required>
+                    <textarea name="Mensagem" rows="5" placeholder="Deixe aqui seus votos e mensagens de carinho..." required></textarea>
+                    
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
