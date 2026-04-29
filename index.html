@@ -126,12 +126,21 @@
         }
 
         /* --- Vídeo --- */
-        .video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            max-width: 800px; margin: 0 auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
 
+.video-container video {
+    width: 100%;
+    max-width: 400px; /* Limita a largura para não ficar gigante na tela do computador */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    outline: none;
+    background-color: transparent;
+}
         /* --- Local (3 Fotos) --- */
         .local-info { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 40px; }
         
@@ -255,13 +264,12 @@
         </section>
 
         <section id="savethedate" class="bg-cream">
-            <div class="container">
-                <span class="subtitle">Nossa História</span>
-                <h2 class="title-section">Save the Date</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"></iframe>
-                </div>
-            </div>
+            <div class="video-container">
+    <video controls preload="metadata" playsinline loop width="100%" style="background-color: transparent;">
+        <source src="https://res.cloudinary.com/dkw2pvyyf/video/upload/q_auto/v1777413027/WhatsApp_Video_2026-04-23_at_18.52.32_dnynrs.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução deste vídeo.
+    </video>
+</div>
         </section>
 
         <section id="local">
@@ -270,9 +278,9 @@
                 <h2 class="title-section">O Local</h2>
                 
                 <div class="local-gallery">
-                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 1">
+                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1777423980/ChatGPT_Image_28_de_abr._de_2026_21_47_32_jdztgu.png" alt="Foto Local 1">
                     <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 2">
-                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1776975469/Design_sem_nome_4_kr7bw9.png" alt="Foto Local 3">
+                    <img src="https://res.cloudinary.com/dkw2pvyyf/image/upload/v1777423980/ChatGPT_Image_28_de_abr._de_2026_21_52_17_ahsl8y.png" alt="Foto Local 3">
                 </div>
 
                 <div class="local-info">
@@ -378,7 +386,7 @@
                 <span class="subtitle">Confirmação</span>
                 <h2 class="title-section">Você irá?</h2>
                 <p style="margin-bottom: 30px;">Por favor, confirme sua presença o quanto antes para organizarmos tudo com carinho.</p>
-                <a href="https://wa.me/5516997243704?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento!" target="_blank" class="btn">
+                <a href="https://wa.me/5516996286075?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento!" target="_blank" class="btn">
                     <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 1.1rem;"></i> Confirmar Presença
                 </a>
             </div>
@@ -400,9 +408,9 @@
                     <div class="pix-title"><i class="fa-solid fa-money-bill-transfer"></i> Presente em Dinheiro</div>
                     <p style="font-size: 0.95rem; margin-bottom: 15px;">Se preferir contribuir com qualquer valor para a montagem do nosso novo lar ou lua de mel:</p>
                     <p style="font-size: 1.2rem; font-weight: 500; color: var(--color-gold); background: #FAF4EA; padding: 10px; border-radius: 6px;">
-                        Chave PIX: (16) 99724-3704
+                        Chave PIX: 484.029.768-16
                     </p>
-                    <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Gabriel Bitencourt</p>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Beatriz Vitoria Politano </p>
                 </div>
             </div>
         </section>
