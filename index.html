@@ -210,6 +210,63 @@
             .local-gallery img { height: 200px; }
             .btn-group { flex-direction: column; width: 100%; }
         }
+        /* Container do Mural */
+.mural-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Trilho que se move */
+.mural-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll-mural 30s linear infinite;
+}
+
+/* Pausa ao passar o mouse ou dedo */
+.mural-track:hover {
+    animation-play-state: paused;
+}
+
+/* Card Individual */
+.mural-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--color-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.mural-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: 15px;
+}
+
+.mural-card .autor {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animação */
+@keyframes scroll-mural {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 2)); } /* Ajuste o cálculo conforme adicionar cards */
+}
     </style>
 </head>
 <body>
@@ -362,7 +419,7 @@
                     <div class="manual-item">
                         <i class="fa-solid fa-champagne-glasses"></i>
                         <h4>Aproveite bastante</h4>
-                        <p>Preparamos tudo com muito amor para que você celebre e dance muito!</p>
+                        <p>Preparamos tudo com muito amor para que você celebre conosco</p>
                     </div>
 
                     <div class="manual-item">
@@ -406,7 +463,7 @@
 
                 <div class="pix-box">
                     <div class="pix-title"><i class="fa-solid fa-money-bill-transfer"></i> Presente em Dinheiro</div>
-                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Se preferir contribuir com qualquer valor para a montagem do nosso novo lar ou lua de mel:</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Caso sinta o desejo de contribuir com o nosso novo lar, deixamos aqui nossa chave PIX. Não existe valor mínimo, o que vier do coração será recebido com muita gratidão</p>
                     <p style="font-size: 1.2rem; font-weight: 500; color: var(--color-gold); background: #FAF4EA; padding: 10px; border-radius: 6px;">
                         Chave PIX: 484.029.768-16
                     </p>
@@ -416,24 +473,44 @@
         </section>
 
         <section id="agradecimentos">
-            <div class="container">
-                <span class="subtitle">Mensagem</span>
-                <h2 class="title-section">Deixe um Recado</h2>
-                <p style="margin-bottom: 40px; font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-heading);">
-                    Gostaríamos muito de ler uma mensagem sua neste momento tão especial.
-                </p>
+    <div class="container">
+        <span class="subtitle">Mensagem</span>
+        <h2 class="title-section">Deixe um Recado</h2>
+        
+        <form action="https://formsubmit.co/gabrielpiresbita@gmail.com" method="POST" style="max-width: 600px; margin: 0 auto 60px;">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="Nome" placeholder="Seu Nome" required>
+            <textarea name="Mensagem" rows="4" placeholder="Deixe aqui seus votos de carinho..." required></textarea>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
 
-                <form action="https://formsubmit.co/gabrielpiresbita@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://gabrielbeatriz.com.br/#agradecimentos">
-                    
-                    <input type="text" name="Nome" placeholder="Seu Nome" required>
-                    <textarea name="Mensagem" rows="5" placeholder="Deixe aqui seus votos e mensagens de carinho..." required></textarea>
-                    
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
+        /*<div class="mural-container">
+            <div class="mural-track">
+                <div class="mural-card">
+                    <p>"Desejamos toda a felicidade do mundo! Que a união de vocês seja sempre guiada pelo amor."</p>
+                    <span class="autor">— Teste 1</span>
+                </div>
+                <div class="mural-card">
+                    <p>"Que alegria participar desse momento. Vocês são um exemplo de casal! Parabéns!"</p>
+                    <span class="autor">— Teste 2</span>
+                </div>
+                <div class="mural-card">
+                    <p>"Contando os dias para celebrar com vocês! Vai ser o casamento do ano!"</p>
+                    <span class="autor">— Teste 3</span>
+                </div>
+                <div class="mural-card">
+                    <p>"Felicidades ao casal Gabriel e Beatriz! Que Deus abençoe essa união."</p>
+                    <span class="autor">— Teste 4</span>
+                </div>
+                <div class="mural-card">
+                    <p>"Felicidades ao casal Gabriel e Beatriz! Que Deus abençoe essa união."</p>
+                    <span class="autor">— Teste 5</span>
+                </div>
             </div>
-        </section>
+        </div>
+    </div> */
+    
+</section>
     </main>
 
 </body>
