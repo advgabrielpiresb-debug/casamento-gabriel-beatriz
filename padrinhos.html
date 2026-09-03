@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel & Beatriz | Lista dos Padrinhos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-offwhite: #FCFAF8;
+            --bg-cream: #FAF4EA;
+            --color-gold: #C4A47C;
+            --color-text: #4A4A4A;
+            --color-text-heading: #2F2F2F;
+            --color-text-secondary: #8A8A8A;
+            --font-cursive: 'Great Vibes', cursive;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--bg-offwhite);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; text-align: center; }
+        section { padding: 80px 0; }
+        .bg-cream { background-color: var(--bg-cream); }
+
+        header {
+            width: 100%;
+            background: #FCFAF8;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        header a {
+            text-decoration: none; color: var(--color-text); font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
+            font-weight: 500;
+        }
+        header a:hover { color: var(--color-gold); }
+
+        .subtitle {
+            font-family: var(--font-sans); font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 4px; color: var(--color-text-secondary); margin-bottom: 5px; display: block;
+        }
+        .title-section {
+            font-family: var(--font-cursive);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 400;
+            color: var(--color-gold);
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .intro-text { max-width: 700px; margin: 0 auto 20px; font-size: 1rem; }
+
+        .btn {
+            background-color: var(--color-gold); color: white; border: 1px solid var(--color-gold);
+            padding: 12px 26px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem;
+            cursor: pointer; transition: var(--transition); text-decoration: none; display: inline-block;
+        }
+        .btn:hover { background-color: var(--color-text-heading); border-color: var(--color-text-heading); color: #fff; }
+
+        /* --- Progresso geral --- */
+        .overall-progress { max-width: 600px; margin: 20px auto 0; }
+        .progress-track {
+            width: 100%; height: 14px; background: #EDE3D4; border-radius: 20px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: var(--color-gold); border-radius: 20px; transition: width 0.6s ease;
+        }
+        .progress-numbers {
+            margin-top: 12px; font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-text-heading);
+        }
+        .progress-numbers span { color: var(--color-gold); font-weight: 600; }
+
+        /* --- Aviso --- */
+        .aviso-box {
+            background: #FFFFFF; padding: 25px 30px; border-radius: 12px; margin: 0 auto 50px;
+            border: 1px solid rgba(196, 164, 124, 0.3); max-width: 750px; text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03); display: flex; gap: 15px; align-items: flex-start;
+        }
+        .aviso-box i { color: var(--color-gold); font-size: 1.3rem; margin-top: 3px; }
+        .aviso-box p { font-size: 0.9rem; }
+
+        /* --- Cards de item --- */
+        .presentes-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px; width: 100%; margin-top: 40px; text-align: left;
+        }
+        .presente-card {
+            background: #FFFFFF; padding: 30px; border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 14px;
+            overflow: hidden;
+        }
+        .presente-img {
+            width: calc(100% + 60px); margin: -30px -30px 0; height: 190px; object-fit: cover;
+        }
+        .presente-card h3 {
+            font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-heading);
+        }
+        .presente-card .valor-meta {
+            font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-gold); font-weight: 600;
+        }
+        .presente-card .progress-track { height: 10px; }
+        .presente-card .progress-legenda {
+            font-size: 0.8rem; color: var(--color-text-secondary); display: flex; justify-content: space-between;
+        }
+        .presente-card .opcoes { font-size: 0.85rem; }
+        .presente-card .opcoes ul { list-style: none; margin-top: 6px; }
+        .presente-card .opcoes li { margin-bottom: 4px; }
+        .presente-card .opcoes a { color: var(--color-gold); text-decoration: none; border-bottom: 1px dotted var(--color-gold); }
+        .presente-card .opcoes a:hover { color: var(--color-text-heading); }
+        .presente-card .nota-parcial {
+            font-size: 0.8rem; font-style: italic; color: var(--color-text-secondary); border-top: 1px solid #F0EAE0; padding-top: 10px;
+        }
+
+        /* --- PIX --- */
+        .pix-box {
+            background: #FFFFFF; padding: 40px; border-radius: 12px; margin-top: 20px;
+            border: 1px solid rgba(196, 164, 124, 0.3); display: inline-block; text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03); max-width: 600px;
+        }
+        .pix-title { font-family: var(--font-serif); color: var(--color-gold); font-size: 1.4rem; margin-bottom: 15px; }
+
+        @media (max-width: 768px) {
+            .title-section { font-size: 2.6rem; }
+            .aviso-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Voltar para o convite</a>
+    </header>
+
+    <main>
+        <section id="padrinhos-hero">
+            <div class="container">
+                <span class="subtitle">Um Pedido Especial</span>
+                <h1 class="title-section">Lista dos Padrinhos</h1>
+                <p class="intro-text">
+                    Padrinhos queridos, para nos ajudar a montar nosso novo lar, separamos os itens que ainda estão
+                    faltando em casa. Vocês podem presentear com o item completo ou contribuir com uma parte do
+                    valor, seja pagando diretamente na loja escolhida, parcelando com o lojista ou fazendo um PIX.
+                    Toda ajuda é bem-vinda e recebida com muito carinho.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-cream">
+            <div class="container">
+                <span class="subtitle">Progresso Geral</span>
+                <h2 class="title-section" style="font-size: clamp(2.2rem, 5vw, 3rem);">Quanto Já Temos</h2>
+                <div class="overall-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="overall-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress-numbers">
+                        <span id="overall-atual">R$ 0,00</span> arrecadados de <span id="overall-meta">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <span class="subtitle">Itens</span>
+                <h2 class="title-section">O Que Está Faltando</h2>
+
+                <div class="aviso-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>
+                        Caso optem por comprar pela internet ou em loja física, pedimos atenção ao prazo de entrega
+                        do produto. Também pedimos, com carinho, que nos avisem com antecedência qual item e loja
+                        vocês escolheram, para organizarmos o recebimento e evitar que duas pessoas comprem o mesmo item.
+                    </p>
+                </div>
+
+                <div class="presentes-grid" id="presentes-grid"></div>
+            </div>
+        </section>
+
+        <section class="bg-cream">
+            <div class="container">
+                <span class="subtitle">Carinho</span>
+                <h2 class="title-section" style="font-size: clamp(2.2rem, 5vw, 3rem);">Presente em Dinheiro</h2>
+                <p style="max-width: 600px; margin: 0 auto 20px;">
+                    Se preferirem contribuir com um valor livre, seja para os móveis acima ou para as despesas
+                    da festa, deixamos aqui nossa chave PIX. Não existe valor mínimo, o que vier do coração
+                    será recebido com muita gratidão.
+                </p>
+                <div class="pix-box">
+                    <div class="pix-title"><i class="fa-solid fa-money-bill-transfer"></i> PIX</div>
+                    <p style="font-size: 1.2rem; font-weight: 500; color: var(--color-gold); background: #FAF4EA; padding: 10px; border-radius: 6px;">
+                        Chave PIX (CPF): 484.029.768-16
+                    </p>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Beatriz Vitoria Politano</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // ---------------------------------------------------------------
+        // Para atualizar o progresso, basta alterar o campo "atual" de
+        // cada item abaixo (valor já arrecadado). O restante é calculado
+        // automaticamente.
+        // ---------------------------------------------------------------
+        const ITENS = [
+            {
+                nome: "Armário de Cozinha",
+                descricao: "Cozinha Modulada 6 Peças Sem Pia em MDF — Allure Linea Brasil, Jequitibá/Gris Fosco",
+                imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_975113-MLA112819166228_072026-F.webp",
+                meta: 3854.00,
+                atual: 0,
+                opcoes: [
+                    { texto: "Mercado Livre — R$ 3.854,00 (com frete + montagem)", link: "https://www.mercadolivre.com.br/p/MLB74823186?matt_tool=38524122&pdp_filters=item_id:MLB4841900785&ua=eJc7gCiirD__NEwxB9XVsOdFLvUdz8sW2hd3yboWstByVCTY#origin=share&sid=share&wid=MLB4841900785&action=whatsapp" },
+                    { texto: "Lojas Cem (Ibitinga/SP) — 4 módulos, R$ 4.012,00", link: null },
+                    { texto: "Loja Hernandes (Itápolis/SP) — R$ 5.010,00", link: null }
+                ]
+            },
+            {
+                nome: "Mesa em L para Escritório",
+                descricao: "Mesa 2,00 x 1,80 m em L para escritório",
+                imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_695461-MLB85497139227_052025-F-mesa-200x180-em-l-para-escritorio-tampo-40mm-varias-cores.webp",
+                meta: 1500.00,
+                atual: 0,
+                opcoes: [
+                    { texto: "Valor de referência: R$ 1.500,00", link: null }
+                ]
+            },
+            {
+                nome: "Cama Box Queen",
+                descricao: "Colchão Queen Castor Premium Tecnopedic (158x198x30)",
+                imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLZQ00c3JvkYknUvcd4LwuliHMIJADUB5MpsttHQjexA&s=10",
+                meta: 2500.00,
+                atual: 0,
+                opcoes: [
+                    { texto: "Magazine Luiza (valor de referência R$ 2.500,00 — conferir na loja)", link: "https://www.magazineluiza.com.br/colchao-queen-castor-premium-tecnopedic-158x198x30/p/gf553g0hja/co/ccbq/?seller_id=audiosat&region_id=123481" }
+                ]
+            },
+            {
+                nome: "Televisão",
+                descricao: "TV de 40 polegadas ou mais (modelo a definir)",
+                imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgcBYjYo5YKpikvjBFdkQPHhbwr_SI0Rta2ngX9d17Li7_wzvM9Y5VtsI&s=10",
+                meta: 2000.00,
+                atual: 0,
+                opcoes: [
+                    { texto: "Valor de referência: R$ 2.000,00", link: null }
+                ]
+            },
+            {
+                nome: "Purificador / Bebedouro",
+                descricao: "Purificador e bebedouro de água gelada (modelo a definir)",
+                imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_719452-MLA99980257591_112025-F.webp",
+                meta: 800.00,
+                atual: 0,
+                opcoes: [
+                    { texto: "Valor de referência: R$ 800,00", link: null }
+                ]
+            }
+        ];
+
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function renderizar() {
+            const grid = document.getElementById('presentes-grid');
+            let metaTotal = 0;
+            let atualTotal = 0;
+
+            ITENS.forEach((item, index) => {
+                metaTotal += item.meta;
+                atualTotal += item.atual;
+                const percentual = item.meta > 0 ? Math.min(100, (item.atual / item.meta) * 100) : 0;
+
+                const opcoesHtml = item.opcoes.map(op => {
+                    return op.link
+                        ? `<li><a href="${op.link}" target="_blank">${op.texto}</a></li>`
+                        : `<li>${op.texto}</li>`;
+                }).join('');
+
+                const imgHtml = item.imagem
+                    ? `<img class="presente-img" src="${item.imagem}" alt="${item.nome}">`
+                    : '';
+
+                const card = document.createElement('div');
+                card.className = 'presente-card';
+                card.innerHTML = `
+                    ${imgHtml}
+                    <h3>${item.nome}</h3>
+                    <p style="font-size: 0.85rem; color: var(--color-text-secondary);">${item.descricao}</p>
+                    <div class="valor-meta">${formatarMoeda(item.meta)}</div>
+                    <div class="progress-track"><div class="progress-fill" style="width:${percentual}%;"></div></div>
+                    <div class="progress-legenda">
+                        <span>${formatarMoeda(item.atual)} arrecadados</span>
+                        <span>${percentual.toFixed(0)}%</span>
+                    </div>
+                    <div class="opcoes">
+                        <strong>Opções de compra:</strong>
+                        <ul>${opcoesHtml}</ul>
+                    </div>
+                    <div class="nota-parcial">
+                        Não conseguiu comprar o item completo? Vá até a loja escolhida e pague uma parte do valor,
+                        combinando diretamente com o lojista o parcelamento do restante.
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            document.getElementById('overall-meta').textContent = formatarMoeda(metaTotal);
+            document.getElementById('overall-atual').textContent = formatarMoeda(atualTotal);
+            document.getElementById('overall-fill').style.width = (metaTotal > 0 ? Math.min(100, (atualTotal / metaTotal) * 100) : 0) + '%';
+        }
+
+        renderizar();
+    </script>
+
+</body>
+</html>
